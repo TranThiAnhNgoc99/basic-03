@@ -17,9 +17,9 @@ public class BTVN1 {
     public static void main(String[] args) {
         // TODO code application logic here
         System.out.println("BAI 1: nhap 2 so thuc A, B dua ra tong, hieu, tich, luy thua, thuong cua 2 so do");
-        double A = 2;
-        double B = 5;
-        double ketqua;
+        float A = 2;
+        float B = 5;
+        float ketqua;
         System.out.println(" A = " + A);
         System.out.println(" B = " + B);
         ketqua = A + B;
@@ -28,7 +28,7 @@ public class BTVN1 {
         System.out.println(" hieu A - B = " + ketqua);
         ketqua = A * B;
         System.out.println(" tich = " + ketqua);
-        ketqua = Math.pow(A, B);
+        ketqua = (float)Math.pow(A, B);
         System.out.println(" luy thua = " + ketqua);
         if (B == 0) {
             System.out.println(" khong ton tai thuong vi b=0");
@@ -58,7 +58,7 @@ public class BTVN1 {
                 System.out.println(" nghiem cua PT la: " + x);
             }
         } else {
-            double d = b * b - 4 * a * c;
+            float d = b * b - 4 * a * c;
             if (d < 0) {
                 System.out.println(" phuong trinh vo nghiem.");
             }
