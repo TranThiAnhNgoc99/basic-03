@@ -18,6 +18,7 @@ public class Bai1 {
      */
     public static Scanner sc = new Scanner(System.in);
     public static int h, m, s, giay, gio;
+    public static String status;
 
     public static void main(String[] args) {
         // TODO code application logic here
@@ -57,7 +58,17 @@ public class Bai1 {
                 break;
             }
         }
-        System.out.println("thoi gian ban dau la: " + h + "h" + m + "m" + s + "s AM");
+        System.out.print("nhap trang thai sang(AM) hay chieu(PM): ");
+        status = sc.next();
+        while (true) {
+            if (status.equalsIgnoreCase("AM") || status.equalsIgnoreCase("PM")) {
+                break;
+            } else {
+                System.out.print("trang thai khong hop le!!! Nhap lai: ");
+                status = sc.next();
+            }
+        }
+        System.out.println("thoi gian ban dau la: " + h + "h" + m + "m" + s + "s " + status);
         System.out.print("nhap vao so giay tang them: ");
         giay = sc.nextInt();
     }
@@ -75,10 +86,19 @@ public class Bai1 {
     }
 
     private static void show() {
-        if ((gio / 12) % 2 == 0) {
-            System.out.println("thoi gian sau khi thay doi: " + h + "h" + m + "m" + s + "s AM");
+        if (status.equalsIgnoreCase("AM")) {
+            if ((gio / 12) % 2 == 0) {
+                System.out.println("thoi gian sau khi thay doi: " + h + "h" + m + "m" + s + "s AM");
+            } else {
+                System.out.println("thoi gian sau khi thay doi: " + h + "h" + m + "m" + s + "s PM");
+            }
         } else {
-            System.out.println("thoi gian sau khi thay doi: " + h + "h" + m + "m" + s + "s PM");
+            if ((gio / 12) % 2 == 0) {
+                System.out.println("thoi gian sau khi thay doi: " + h + "h" + m + "m" + s + "s PM");
+            } else {
+                System.out.println("thoi gian sau khi thay doi: " + h + "h" + m + "m" + s + "s AM");
+            }
         }
     }
+
 }
